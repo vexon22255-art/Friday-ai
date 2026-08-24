@@ -277,7 +277,7 @@ if audio:
 
     language = st.selectbox(
         "Speech language",
-        options=["en", "ml", "es", "fr", "de", "ja",⁠⁠
+        options=["en", "ml", "es", "fr", "de", "ja",⁠⁠]
         format_func=lambda code: {
             "en": "English",
             "hi": "Hindi",
