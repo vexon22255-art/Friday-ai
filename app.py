@@ -276,18 +276,18 @@ if audio:
     st.audio(audio_bytes, format='audio/wav')
 
     language = st.selectbox(
-        "Speech language",
-        options=["en", "ml", "es", "fr", "de", "ja",⁠⁠]
-        format_func=lambda code: {
-            "en": "English",
-            "hi": "Hindi",
-            "es": "Spanish",
-            "fr": "French",
-            "de": "German",
-            "ja": "Japanese",
-            "ml": "Malayalam",
-        }[code],
-    )
+    "Speech language",
+    options=["ml", "en", "hi", "es", "fr", "de", "ja"],
+    format_func=lambda code: {
+        "ml": "Malayalam",
+        "en": "English",
+        "hi": "Hindi",
+        "es": "Spanish",
+        "fr": "French",
+        "de": "German",
+        "ja": "Japanese",
+    }[code],
+)
     slow = st.toggle("Slower speech", value=False)
     st.caption("Each response replaces the latest `friday.mp3` file.")
     st.divider()
