@@ -6,6 +6,8 @@ import os
 from pathlib import Path
 
 import streamlit as st
+from streamlit_mic_recorder import mic_recorder
+
 
 # This must be the first Streamlit command in the script.
 st.set_page_config(
@@ -261,9 +263,21 @@ with st.sidebar:
         st.info("Guest mode · general questions")
     st.divider()
     st.markdown("### Voice settings")
+    st.markdown("### Voice Input")
+audio = mic_recorder(
+    start_prompt="🎤 Click to Speak",
+    stop_prompt="⏹️ Stop",
+    key='mic_input'
+)
+
+if audio:
+   
+    audio_bytes = audio['bytes']
+    st.audio(audio_bytes, format='audio/wav')
+
     language = st.selectbox(
         "Speech language",
-        options=["en", "hi", "es", "fr", "de", "ja"],
+        options=["en", "hi", "es", "fr", "de", "ja"],⁠"ml"⁠
         format_func=lambda code: {
             "en": "English",
             "hi": "Hindi",
@@ -271,6 +285,7 @@ with st.sidebar:
             "fr": "French",
             "de": "German",
             "ja": "Japanese",
+            "ml": "Malayalam",
         }[code],
     )
     slow = st.toggle("Slower speech", value=False)
