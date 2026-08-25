@@ -258,40 +258,7 @@ with st.sidebar:
         st.success("Signed in as Boss Anandhu")
     else:
         st.info("Guest mode · general questions")
-    st.divider()
-    st.markdown("### Voice settings")
-    st.markdown("### Voice Input")
-audio = mic_recorder(
-    start_prompt="🎤 Click to Speak",
-    stop_prompt="⏹️ Stop",
-    key='mic_input'
-)
-
-if audio:
-   
-    audio_bytes = audio['bytes']
-    st.audio(audio_bytes, format='audio/wav')
-
-    language = st.selectbox(
-    "Speech language",
-    options=["ml", "en", "hi", "es", "fr", "de", "ja"],
-    format_func=lambda code: {
-        "ml": "Malayalam",
-        "en": "English",
-        "hi": "Hindi",
-        "es": "Spanish",
-        "fr": "French",
-        "de": "German",
-        "ja": "Japanese",
-    }[code],
-)
-    slow = st.toggle("Slower speech", value=False)
-    st.caption("Each response replaces the latest `friday.mp3` file.")
-    st.divider()
-    if st.button("Clear conversation", use_container_width=True):
-        reset_chat()
-        st.rerun()
-
+    
 st.markdown(
     """
     <div class="hud-wrap">
