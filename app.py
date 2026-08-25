@@ -304,7 +304,7 @@ if prompt:
                         st.session_state.chat,
                     ) = create_chat(st.session_state.access_level)
                 response = generate_response(st.session_state.chat, prompt)
-                synthesize(response,en⁠, DEFAULT_OUTPUT,False )
+                synthesize(response,en⁠,DEFAULT_OUTPUT,False )
                 st.markdown(response)
                 st.audio(DEFAULT_OUTPUT.read_bytes(), format="audio/mp3")
                 st.download_button(
