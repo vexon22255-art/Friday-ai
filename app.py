@@ -6,9 +6,6 @@ import os
 from pathlib import Path
 
 import streamlit as st
-from streamlit_mic_recorder import mic_recorder
-
-
 # This must be the first Streamlit command in the script.
 st.set_page_config(
     page_title="FRIDAY · Anandhu's AI assistant",
