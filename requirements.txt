@@ -1,2 +1,6 @@
-streamlit_mic_recorder
+streamlit-mic-recorder==0.1.2
+streamlit
+google-generativeai
+gTTS
+
 
